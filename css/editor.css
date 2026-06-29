@@ -1,0 +1,495 @@
+/*
+============================================
+
+DTF Work Diary 310
+Version 1.0.0
+
+editor.css
+
+============================================
+*/
+
+/* ===== 全体 ===== */
+
+body{
+    margin:0;
+    padding:30px;
+    background:#f4f7f6;
+    font-family:"Yu Gothic UI","Meiryo",sans-serif;
+    color:#333;
+}
+
+
+/* ===== コンテナ ===== */
+
+.container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+
+/* ===== ヘッダー ===== */
+
+.editor-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ===== ボタン ===== */
+
+.primary-button{
+
+    background:#7FD8BE;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:10px 22px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+.primary-button:hover{
+
+    background:#67c9ae;
+
+}
+
+.secondary-button{
+
+    background:white;
+
+    color:#555;
+
+    border:1px solid #d7d7d7;
+
+    border-radius:8px;
+
+    padding:10px 22px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.secondary-button:hover{
+
+    background:#f5f5f5;
+
+}
+
+
+/* ===== カード ===== */
+
+.card{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:24px;
+
+    margin-bottom:22px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+
+}
+
+
+/* ===== タイトル ===== */
+
+.card h2{
+
+    margin-top:0;
+
+    color:#4c8d7a;
+
+    border-left:6px solid #7FD8BE;
+
+    padding-left:10px;
+
+}
+
+
+/* ===== 基本情報 ===== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+
+}
+
+
+label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-weight:bold;
+
+}
+
+
+/* ===== 入力欄 ===== */
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:10px;
+
+    border:1px solid #cccccc;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    box-sizing:border-box;
+
+}
+
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:#7FD8BE;
+
+    box-shadow:0 0 0 3px rgba(127,216,190,.25);
+
+}
+
+
+/* ===== テキストエリア ===== */
+
+textarea{
+
+    resize:vertical;
+
+    min-height:90px;
+
+    margin-bottom:18px;
+
+}
+
+
+/* ===== セクションタイトル ===== */
+
+.section-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+}
+
+
+/* ===== テーブル ===== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#edf8f5;
+
+    padding:12px;
+
+    border-bottom:2px solid #d7ebe4;
+
+}
+
+td{
+
+    padding:10px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+tbody tr:hover{
+
+    background:#fafdfc;
+
+}
+
+
+/* ===== フッター ===== */
+
+.editor-footer{
+
+    text-align:center;
+
+    margin:40px 0;
+
+}
+
+
+/* ===== レスポンシブ ===== */
+
+@media(max-width:768px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    .editor-header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        align-items:stretch;
+
+    }
+
+    .header-buttons{
+
+        display:flex;
+
+        gap:10px;
+
+    }
+
+    .header-buttons button{
+
+        flex:1;
+
+    }
+
+}
+
+/* ===== 作業表 ===== */
+
+.delete-row{
+
+    background:#ff7676;
+
+    color:white;
+
+    border:none;
+
+    border-radius:6px;
+
+    padding:8px 12px;
+
+    cursor:pointer;
+
+}
+
+.delete-row:hover{
+
+    background:#f05555;
+
+}
+
+#scheduleTable select,
+#scheduleTable input{
+
+    margin:0;
+
+}
+
+.task-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.task-btn{
+    background:#7FD8BE;
+    border:none;
+    color:white;
+    padding:8px 14px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.2s;
+    font-size:13px;
+}
+
+.task-btn:hover{
+    background:#67c9ae;
+}
+
+.dynamic-row{
+    margin-top:10px;
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+}
+
+.dynamic-row textarea{
+    flex:1;
+}
+
+.dynamic-tag{
+    min-width:80px;
+    font-size:12px;
+    font-weight:bold;
+    padding-top:8px;
+}
+
+/* =========================
+   一日の連絡事項ボタン
+========================= */
+
+#addNoticeBtn,
+#addTroubleBtn,
+#addAttentionBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 10px 14px;
+    margin: 6px 6px 12px 0;
+
+    border: none;
+    border-radius: 10px;
+
+    font-weight: bold;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+/* 連絡事項（青） */
+#addNoticeBtn {
+    background: #4A90E2;
+    color: white;
+}
+
+#addNoticeBtn:hover {
+    background: #3A78C2;
+    transform: translateY(-1px);
+}
+
+/* トラブル（赤） */
+#addTroubleBtn {
+    background: #E74C3C;
+    color: white;
+}
+
+#addTroubleBtn:hover {
+    background: #C0392B;
+    transform: translateY(-1px);
+}
+
+/* 注意事項（オレンジ） */
+#addAttentionBtn {
+    background: #F39C12;
+    color: white;
+}
+
+#addAttentionBtn:hover {
+    background: #D68910;
+    transform: translateY(-1px);
+}
+
+/* 押したとき */
+#addNoticeBtn:active,
+#addTroubleBtn:active,
+#addAttentionBtn:active {
+    transform: scale(0.97);
+}
+
+#dynamicButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.task-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* 作業ボタン本体 */
+.task-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 8px 12px;
+
+    border: 1px solid #d0d0d0;
+    border-radius: 6px; /* ←ここがポイント（丸すぎない） */
+
+    background: #f7f7f7;
+    color: #333;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.15s ease;
+}
+
+/* hover */
+.task-btn:hover {
+    background: #eaeaea;
+    border-color: #bdbdbd;
+    transform: translateY(-1px);
+}
+
+/* 押したとき */
+.task-btn:active {
+    transform: scale(0.97);
+}
+
+/* フォーカス（アクセシビリティ） */
+.task-btn:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74,144,226,0.2);
+}
+
+.task-btn.active {
+    background: #4a90e2;
+    color: white;
+    border-color: #4a90e2;
+}

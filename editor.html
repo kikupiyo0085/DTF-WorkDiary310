@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>DTF Work Diary 310</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/editor.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ======================================
+         Header
+    ======================================= -->
+
+    <header class="editor-header">
+
+        <button
+            id="backButton"
+            class="secondary-button">
+
+            ← ホーム
+
+        </button>
+
+        <div class="header-buttons">
+
+            <button
+                id="saveButton"
+                class="primary-button">
+
+                💾 保存
+
+            </button>
+
+            <button
+                id="printButton"
+                class="secondary-button">
+
+                🖨 印刷
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ======================================
+         基本情報
+    ======================================= -->
+
+    <section class="card">
+
+        <h2>1⃣ 基本情報</h2>
+
+        <div class="form-grid">
+
+            <div>
+
+                <label>日付</label>
+
+                <input
+                    type="date"
+                    id="diaryDate">
+
+            </div>
+
+            <div>
+
+                <label>曜日</label>
+
+                <input
+                    type="text"
+                    id="weekDay"
+                    readonly>
+
+            </div>
+
+            <div>
+
+                <label>天気</label>
+
+                <select id="weather">
+
+                    <option>🌞晴れ</option>
+                    <option>☁️曇り</option>
+                    <option>🌧️雨</option>
+                    <option>❄️雪</option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <label>気温</label>
+
+                <input
+                    type="number"
+                    id="temperature">
+
+            </div>
+
+            <div>
+
+                <label>入力担当者</label>
+
+                <select id="worker">
+
+                    <option>サトウ</option>
+                    <option>伊藤さん</option>
+                    <option>鳥居さん</option>
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================
+         作業スケジュール
+    ======================================= -->
+
+    <section class="card">
+
+        <div class="section-title">
+
+            <h2>2⃣ 作業スケジュール</h2>
+
+            <div id="taskButtons" class="task-buttons">
+
+    <button class="task-btn" data-type="印刷">🖨 印刷</button>
+<button class="task-btn" data-type="梱包">📦 梱包</button>
+<button class="task-btn" data-type="検品">🔍 検品</button>
+<button class="task-btn" data-type="DTF">🖨 DTF</button>
+<button class="task-btn" data-type="出荷">🚚 出荷</button>
+
+</div>
+
+
+            <button
+                id="addRowButton"
+                class="primary-button">
+
+                ＋ 行追加
+
+            </button>
+
+        </div>
+
+        <table
+            id="scheduleTable">
+
+            <thead>
+
+            <tr>
+
+                <th>作業内容</th>
+
+                <th>件数</th>
+
+                <th></th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- ======================================
+         明日の予定
+    ======================================= -->
+
+    <section class="card">
+
+        <h2>3⃣ 明日の予定</h2>
+
+        <label>作業予定</label>
+
+        <textarea
+            id="tomorrowSchedule"
+            rows="4"></textarea>
+
+        <label>注意点</label>
+
+        <textarea
+            id="attention"
+            rows="4"></textarea>
+
+    </section>
+
+      <!-- ======================================
+         一日の連絡事項
+    ======================================= -->
+
+    <section class="card">
+
+      <h2>4⃣ 一日の連絡事項</h2>
+
+    <button id="addNoticeBtn">📢 連絡事項</button>
+<button id="addTroubleBtn">⚠ トラブル</button>
+<button id="addAttentionBtn">🟡 注意事項</button>
+
+    <div id="dynamicFields"></div>
+
+
+    </section>
+
+
+
+    <!-- ======================================
+         Footer
+    ======================================= -->
+
+    <footer class="editor-footer">
+
+        <button
+            id="footerSaveButton"
+            class="primary-button">
+
+            💾 保存
+
+        </button>
+
+    </footer>
+
+</div>
+
+<script defer src="js/storage.js"></script>
+<script defer src="js/app.js"></script>
+<script defer src="js/diary.js"></script>
+
+
+</body>
+
+</html>

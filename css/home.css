@@ -1,0 +1,475 @@
+/* =====================================================
+   DTF Work Diary 310
+   home.css
+   ホーム画面専用スタイル
+===================================================== */
+
+
+/* ==========================================
+   Header
+========================================== */
+
+.top-bar{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:24px;
+
+}
+
+#currentMonth{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+.month-button{
+
+    width:42px;
+
+    height:42px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+}
+
+.month-button:hover{
+
+    background:var(--primary-light);
+
+}
+
+.new-button{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:10px 20px;
+
+}
+
+.new-button:hover{
+
+    background:var(--primary-hover);
+
+}
+
+
+/* ==========================================
+   Calendar
+========================================== */
+
+.calendar-area{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.calendar-cell {
+    border: 1px solid #ddd;
+    min-height: 70px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.calendar-icons {
+    display: flex;
+    gap: 4px;
+    font-size: 14px;
+}
+
+/* 曜日 */
+
+.week-header{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    margin-bottom:12px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    color:var(--subtext);
+
+}
+
+
+/* カレンダー本体 */
+
+.calendar-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:12px;
+
+}
+
+
+/* ==========================================
+   Day Card
+========================================== */
+
+.day-card{
+
+    min-height:120px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:white;
+
+    padding:10px;
+
+    cursor:pointer;
+
+    transition:.15s;
+
+}
+
+.day-card:hover{
+
+    border-color:var(--primary);
+
+    transform:translateY(-2px);
+
+}
+
+
+/* 今日 */
+
+.day-card.today{
+
+    background:var(--primary-light);
+
+    border-color:var(--primary);
+
+}
+
+
+/* 日付 */
+
+.day-number{
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+}
+
+
+/* カード情報 */
+
+.day-info{
+
+    font-size:13px;
+
+    color:var(--subtext);
+
+    line-height:1.5;
+
+}
+
+
+/* ==========================================
+   Today's Diary
+========================================== */
+
+.today-card{
+
+    margin-top:24px;
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.today-buttons{
+
+    margin-top:18px;
+
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.panel {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    min-height: 200px;
+}
+
+
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width:900px){
+
+    .calendar-grid{
+
+        gap:8px;
+
+    }
+
+    .day-card{
+
+        min-height:90px;
+
+    }
+
+}
+
+@media (max-width:700px){
+
+    .top-bar{
+
+        flex-wrap:wrap;
+
+    }
+
+    #currentMonth{
+
+        width:100%;
+
+        order:-1;
+
+        margin-bottom:10px;
+
+    }
+
+}
+
+.day-cell{
+    background:white;
+    border-radius:8px;
+    padding:10px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.day-cell:hover{
+    background:#e8f6f2;
+}
+
+.day-cell.has-data{
+    background:#7FD8BE;
+    color:white;
+    font-weight:bold;
+}
+
+.day-cell{
+    background:white;
+    border-radius:8px;
+    padding:10px;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.day-cell:hover{
+    background:#e8f6f2;
+}
+
+.day-cell.has-data{
+    background:#7FD8BE;
+    color:white;
+    font-weight:bold;
+}
+
+.day-cell.today{
+    border:2px solid #4c8d7a;
+    font-weight:bold;
+}
+
+.day-card{
+    background:white;
+    border-radius:12px;
+    padding:5px;
+    min-height:130px;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 2px 4px rgba(0,0,0,.05);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.day-card:hover{
+    transform:translateY(-2px);
+    background:#f3fbf9;
+}
+
+.day-card.has-data{
+    border:2px solid #7FD8BE;
+}
+
+.card-date{
+    font-weight:bold;
+    color:#333;
+}
+
+.card-info{
+    font-size:12px;
+    color:#666;
+}
+
+.card-attention{
+    font-size:11px;
+    color:#ff2b67;
+    margin-top:4px;
+    font-weight:bold;
+}
+
+.day-card:has(.card-attention){
+    border-left:4px solid #d6e3e4;
+}
+
+/* =========================
+   Home Layout
+========================= */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+/* =========================
+   Card
+========================= */
+
+.summary-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.summary-card h2 {
+    margin-bottom: 8px;
+}
+
+/* =========================
+   Section
+========================= */
+
+.summary-section {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.summary-section h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #666;
+}
+
+/* =========================
+   Row
+========================= */
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 4px 0;
+    font-size: 14px;
+}
+
+/* =========================
+   Tag
+========================= */
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #f3f3f3;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* =========================
+   Count
+========================= */
+
+.count {
+    font-weight: bold;
+}
+
+/* =========================
+   Calendar spacing fix
+========================= */
+
+.calendar-area {
+    margin-top: 20px;
+}
+
+/* =========================
+   連絡事項（目立つカード）
+========================= */
+
+.summary-line.notice {
+    background: #f4f9ff;
+    border-left: 4px solid #4da3ff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin: 4px 0;
+}
+
+/* トラブル */
+.summary-line.notice:has(.tag:contains("トラブル")) {
+    background: #fff4f4;
+    border-left: 4px solid #ff4d4d;
+}
+
+/* 注意事項 */
+.summary-line.notice:has(.tag:contains("注意")) {
+    background: #fffbe6;
+    border-left: 4px solid #ffcc00;
+}
+
+/* テキスト */
+.summary-line.notice .text {
+    flex: 1;
+    font-size: 13px;
+}
+

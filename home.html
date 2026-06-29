@@ -4,19 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>DTF Work Diary 310</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/calendar.css">
 </head>
 
 <body>
 
 <div class="container">
 
-    <!-- =========================
+    <!-- ==========================
          Header
-    ========================== -->
+    =========================== -->
+
     <header class="top-bar">
 
         <button id="prevMonth" class="month-button">◀</button>
@@ -32,39 +35,40 @@
     </header>
 
 
-    <!-- =========================
-         サマリー（重要）
-    ========================== -->
-    <section class="summary-grid">
+    <!-- ==========================
+         ホームダッシュボード
+    =========================== -->
 
-        <!-- 前日 -->
-        <div class="summary-card" id="yesterdayCard">
+    <section class="home-grid">
 
-            <h2>前日の作業</h2>
+        <!-- 前日パネル -->
+        <div id="yesterdayPanel" class="panel">
 
-            <div id="yesterdayDate"></div>
-
-            <div id="yesterdayContent"></div>
+            <h3>前日</h3>
+            <p>読み込み中...</p>
 
         </div>
 
-        <!-- 今日 -->
-        <div class="summary-card" id="todayCard">
+        <!-- 今日パネル -->
+        <div id="todayPanel" class="panel">
 
-            <h2>今日の日誌</h2>
+            <h3>今日</h3>
 
             <div id="todayDate"></div>
 
-            <div id="todayContent"></div>
+            <button id="continueButton" class="primary-button">
+                今日を編集
+            </button>
 
         </div>
 
     </section>
 
 
-    <!-- =========================
+    <!-- ==========================
          カレンダー
-    ========================== -->
+    =========================== -->
+
     <section class="calendar-area">
 
         <div class="week-header">
@@ -84,11 +88,14 @@
 </div>
 
 
-<!-- JS -->
-<script src="js/app.js"></script>
+<!-- ==========================
+     JS
+=========================== -->
+
 <script src="js/storage.js"></script>
-<script src="js/calendar.js"></script>
+<script src="js/app.js"></script>
 <script src="js/home.js"></script>
+<script src="js/calendar.js"></script>
 
 </body>
 </html>
