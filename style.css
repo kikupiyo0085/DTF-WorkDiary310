@@ -1,0 +1,224 @@
+/* =====================================================
+   DTF Work Diary 310
+   style.css
+   全ページ共通スタイル
+===================================================== */
+
+/* ---------- リセット ---------- */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- カラーパレット ---------- */
+
+:root{
+
+    --bg:#F6F8F7;
+    --card:#FFFFFF;
+
+    --primary:#6FCF97;
+    --primary-hover:#57BE82;
+    --primary-active:#49A973;
+
+    --primary-light:#EAF8F1;
+
+    --border:#E3E8E6;
+
+    --text:#333333;
+    --subtext:#777777;
+
+    --shadow:0 4px 16px rgba(0,0,0,.06);
+
+}
+
+/* ---------- Body ---------- */
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:
+    "Yu Gothic UI",
+    "Yu Gothic",
+    "Meiryo",
+    sans-serif;
+
+    font-size:16px;
+
+    line-height:1.6;
+
+}
+
+/* ---------- Container ---------- */
+
+.container{
+
+    width:min(1400px,95%);
+
+    margin:24px auto;
+
+}
+
+/* ---------- 見出し ---------- */
+
+h1{
+
+    font-size:2rem;
+
+    font-weight:600;
+
+}
+
+h2{
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+}
+
+/* ---------- Card ---------- */
+
+.card{
+
+    background:var(--card);
+
+    border-radius:16px;
+
+    box-shadow:var(--shadow);
+
+    padding:20px;
+
+}
+
+/* ---------- ボタン共通 ---------- */
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:12px;
+
+    transition:
+        background .15s,
+        transform .1s;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+}
+
+/* ---------- メインボタン ---------- */
+
+.primary-button{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:10px 18px;
+
+}
+
+.primary-button:hover{
+
+    background:var(--primary-hover);
+
+}
+
+.primary-button:active{
+
+    background:var(--primary-active);
+
+    transform:scale(.98);
+
+}
+
+/* ---------- サブボタン ---------- */
+
+.secondary-button{
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    padding:10px 18px;
+
+}
+
+.secondary-button:hover{
+
+    background:#F8F8F8;
+
+}
+
+/* ---------- 入力欄 ---------- */
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    padding:10px;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    outline:none;
+
+    transition:.15s;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(111,207,151,.18);
+
+}
+
+/* ---------- リンク ---------- */
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+/* ---------- スクロールバー ---------- */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#D8DDDA;
+
+    border-radius:100px;
+
+}
